@@ -15,7 +15,7 @@ import { UserController } from './users/controller';
       password: 'patankar595',
       database: 'highkage93',
       entities: [User],
-      synchronize: false,
+      synchronize: true,
       autoLoadEntities: true,
     }),
   ],
