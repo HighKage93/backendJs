@@ -10,6 +10,7 @@ import { UsersService } from './users/services';
 @Module({
   imports: [
     UsersModule,
+    TypeOrmModule.forFeature([User]),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -21,6 +22,17 @@ import { UsersService } from './users/services';
       synchronize: true,
       autoLoadEntities: true,
     }),
+    // TypeOrmModule.forRoot({
+    //   type: 'mysql',
+    //   host: process.env.HOST,
+    //   port: parseInt(process.env.PORT, 10),
+    //   username: process.env.USERNAME,
+    //   password: process.env.PASSWORD,
+    //   database: process.env.DATABASE,
+    //   entities: [User],
+    //   synchronize: true,
+    //   autoLoadEntities: true,
+    // }),
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UsersService],
