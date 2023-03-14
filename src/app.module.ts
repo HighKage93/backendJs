@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -6,6 +7,7 @@ import { User } from './users/entity';
 import { UserController } from './users/controller';
 import { UsersModule } from './users/module';
 import { UsersService } from './users/services';
+import { ChatGateway } from './chat.gateway';
 
 @Module({
   imports: [
@@ -35,6 +37,6 @@ import { UsersService } from './users/services';
     // }),
   ],
   controllers: [AppController, UserController],
-  providers: [AppService, UsersService],
+  providers: [AppService, UsersService, ChatGateway],
 })
 export class AppModule {}
